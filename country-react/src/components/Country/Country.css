@@ -1,0 +1,9 @@
+.single{
+    background-color: rgb(165, 173, 212);
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.margin{
+    margin: 1px;
+}
