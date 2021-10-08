@@ -20,7 +20,7 @@ const Shop = () => {
         })
     
     }, [])
-// ------------------------------------for retrive data from local store-------------------------
+// ------------------------------------(for retrive data from local store)-------------------------
     useEffect(() => {
       if(products.length){
         const saveCart=getStoredCart();
@@ -29,7 +29,7 @@ const Shop = () => {
 
         console.log(saveCart);
         for(const key in saveCart){
-            console.log(key,saveCart[key]); //key aikhane property.
+            console.log(key,saveCart[key]); //key aikhane property -value asbe na.
             console.log(saveCart[key]); //key aikhane property.
 
             console.log(key);
@@ -41,6 +41,7 @@ const Shop = () => {
               addedProduct.quantity=quantity;//quality namer property add kora hoiase.
             storedCart.push(addedProduct);
 
+///key onujai j product paoya gese oi product a quantity set kore dea.
             
           }
         //   console.log(key,addedProduct);
@@ -51,7 +52,7 @@ const Shop = () => {
       setcart(storedCart);
       
       }
-    }, [products]) //dependency dile  products r man change hole abar call hobe
+    }, [products]) //dependency dile  products r man change hole abar call hobe.dependency empty dile akbar call hobe r kono kisu na dile infinity call hobe.
 
     // -------------------event handlader-------------------------
 

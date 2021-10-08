@@ -1,4 +1,5 @@
 // use local storage as your db for now
+//-----------------------------------------------------------------------
 const addToDb = id => {
   const exists = getDb();
   let shopping_cart = {};
@@ -10,9 +11,9 @@ const addToDb = id => {
   }
   else {
     shopping_cart = JSON.parse(exists);//shopping cart thakle take obj a change korte hobe.
-    if (shopping_cart[id]) {
+    if (shopping_cart[id]) {   //shopping cart r bitor item ta aage theke thakle if na hoi else
       const newCount = shopping_cart[id] + 1;
-      shopping_cart[id] = newCount;
+      shopping_cart[id] = newCount;  //value hisabe shopping cart a set kora hobe.
     }
     else {
       shopping_cart[id] = 1;
@@ -22,6 +23,7 @@ const addToDb = id => {
 }
 //-----------------------------------------------------------------------------------------------
 const getDb = () => localStorage.getItem('shopping_cart');
+//------------------------------------------------------------------------------------------
 const updateDb = cart => {
   localStorage.setItem('shopping_cart', JSON.stringify(cart));
 }
@@ -47,4 +49,4 @@ const clearTheCart = () => {
   localStorage.removeItem('shopping_cart');
 }
 
-export { addToDb, removeFromDb as deleteFromDb, clearTheCart, getStoredCart }
+export { addToDb, removeFromDb, clearTheCart, getStoredCart }
