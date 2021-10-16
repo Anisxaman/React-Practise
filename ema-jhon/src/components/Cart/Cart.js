@@ -1,7 +1,17 @@
 import "./Cart.css"
 import React from 'react';
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useHistory } from "react-router";
 
 const Cart = (props) => {
+
+const his= useHistory();
+    const Order=()=>{
+        his.push("/shipping")
+    }
+
+    
     const {cart}=props;
 console.log(cart);
 
@@ -24,6 +34,10 @@ console.log(cart);
             <h5 className="item">Items Order: {totalQuantity}  </h5>
             <br />
             <p>Total : {total.toFixed(2)}</p>
+            <button onClick={()=>Order()}
+                    
+                    className="btn-primary rounded p-1"
+                ><FontAwesomeIcon icon={faShoppingCart} /> Place Order</button>
             
         </div>
     );
