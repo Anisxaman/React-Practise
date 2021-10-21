@@ -11,7 +11,7 @@ const his= useHistory();
         his.push("/shipping")
     }
 
-    
+
     const {cart}=props;
 console.log(cart);
 
